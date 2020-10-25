@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library - Users</title>
+  </head>
+  <body>
+    <header>
+      <div class="dropdown">
+        <button id="menu-button"><img id=menu alt="menu" src="images/menu.png"></button>
+        <div class="dropdown-content">
+          <a href="index.html">Library Home</a>
+          <a href="users.html">Users</a>
+          <a href="books.html">Books</a>
+          <a href="loans.html">Loans</a>
+        </div>
+      </div>
+      <h1>University of PontyBridge</h1>
+      <h1><a href="index.html">Library home</a></h1>
+      <h1><a href="users.html">Users</a></h1>
+      <h1><a href="books.html">Books</a></h1>
+      <h1><a href="loans.html">Loans</a></h1>
+    </header>
+    <div class="container1">
+      <div class="search_func">
+        <div class = "searchbar">
+          <h2>Search for a user</h2>
+          <label>Search by Name
+            <input type="search" id="UserName">
+          </label>
+          <input type="submit" id="searchByName" value="search">
+        </div>
+        <div class="searchbar">
+          <label>Search by Barcode
+            <input type="search" id="Barcode" value="">
+          </label>
+          <input type="submit" id="searchByBarcode" value="search">
+        </div>
+        <div>
+          <table id="output">
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Barcode</td>
+              <td>Mem Type</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="other_func">
+        <div class="update">
+          <div class="searchbar">
+            <h2>Update a User</h2>
+            <label>Enter user ID:
+              <input type="text" id="id_update">
+            </label>
+          </div>
+          <div class="searchbar">
+            <label>Enter Name to Update:
+              <input type="text" id="EnterNewName">
+            </label>
+            <input type="submit" id="updateName" value="update">
+          </div>
+          <div class="searchbar">
+            <label>Enter New Member Type:
+              <input type="text" id="EnterNewType">
+            </label>
+            <input type="submit" id="updateType" value="update">
+          </div>
+        </div>
+        <div class="searchbar">
+          <h2>Remove a user</h2>
+          <label>Enter User ID:
+            <input type="text" id = "userID">
+          </label>
+          <input id = "removeUser" type="button" value="Remove">
+        </div>
+      </div>
+    </div>
+    <script src="userScript.js">
+
+    </script>
+  </body>
+</html>

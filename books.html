@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library - Books</title>
+  </head>
+  <body>
+    <header>
+      <div class="dropdown">
+        <button id="menu-button"><img id=menu alt="menu" src="images/menu.png"></button>
+        <div class="dropdown-content">
+          <a href="index.html">Library Home</a>
+          <a href="users.html">Users</a>
+          <a href="books.html">Books</a>
+          <a href="loans.html">Loans</a>
+        </div>
+      </div>
+      <h1>University of PontyBridge</h1>
+      <h1><a href="index.html">Library home</a></h1>
+      <h1><a href="users.html">Users</a></h1>
+      <h1><a href="books.html">Books</a></h1>
+      <h1><a href="loans.html">Loans</a></h1>
+    </header>
+    <div class="container1">
+      <div class="search_func">
+        <div class="searchbar">
+          <h2>Search</h2>
+          <label>Search for Book by Title:
+            <input type="search" id="Title">
+          </label>
+          <input type="submit" id="searchByTitle" value="Search">
+        </div>
+        <div class="searchbar">
+          <label>Search for Book by Author ID:
+            <input type="search" id="aID">
+          </label>
+          <input type="submit" id="searchByAuthor" value="Search">
+        </div>
+        <div class="searchbar">
+          <label>Search for an Author:
+            <input type="search" id="searchAuthorName">
+          </label>
+          <input type="submit" id="searchAuthor" value="Search">
+        </div>
+        <div>
+          <table id="output">
+            <tr class="firstRow">
+              <td>ID</td>
+              <td>Title</td>
+              <td>ISBN</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="other_func">
+        <div class="searchbar">
+          <h2>Remove a Book</h2>
+          <label>Enter Book ID:
+            <input type="text" id="bookID">
+          </label>
+          <input type="button" id="removeBook" value="Remove">
+        </div>
+        <div class="searchbar">
+          <h2>Add New Author</h2>
+          <label>Enter Name:
+            <input type="text" id="newAuthor">
+          </label>
+          <input type="submit" id="addAuthor" value="Add">
+        </div>
+        <div class="searchbar">
+          <h2>Assign an author to a book</h2>
+          <label>Enter Author ID:
+            <input type="text" id=authorID>
+          </label>
+        </div>
+        <div class="searchbar">
+          <label>Book Title:
+            <input type="text" id="bookTitle">
+          </label>
+        </div>
+        <div class="searchbar">
+          <label>Book ISBN:
+            <input type="text" id="bookISBN">
+          </label>
+          <input type="submit" id="assign" value="Assign">
+        </div>
+      </div>
+    </div>
+    <script src="bookScript.js">
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library - Loans</title>
+  </head>
+  <body>
+    <header>
+      <div class="dropdown">
+        <button id="menu-button"><img id=menu  alt="menu" src="images/menu.png"></button>
+        <div class="dropdown-content">
+          <a href="index.html">Library Home</a>
+          <a href="users.html">Users</a>
+          <a href="books.html">Books</a>
+          <a href="loans.html">Loans</a>
+        </div>
+      </div>
+      <h1>University of PontyBridge</h1>
+      <h1><a href="index.html">Library home</a></h1>
+      <h1><a href="users.html">Users</a></h1>
+      <h1><a href="books.html">Books</a></h1>
+      <h1><a href="loans.html">Loans</a></h1>
+    </header>
+    <div class="container1">
+      <div class="users_func">
+        <div>
+          <h2>Users</h2>
+          <table id="users_table">
+            <tr class="firstRow">
+              <td>ID</td>
+              <td>Name</td>
+              <td>Barcode</td>
+              <td>Member Type</td>
+            </tr>
+          </table>
+        </div>
+        <div class="searchbar">
+          <h2>View a Users Loans</h2>
+          <label>Enter User ID:
+            <input type="search" id="enterID">
+          </label>
+          <input type="submit" id="viewUserLoans" value="View">
+        </div>
+        <div>
+          <table id="userLoanTable">
+            <tr>
+              <td>Loan ID</td>
+              <td>Book ID</td>
+              <td>Due Date</td>
+            </tr>
+          </table>
+        </div>
+        <div class="loan">
+          <h2>Loan a Book to a User</h2>
+          <div class="searchbar">
+            <label>Enter User ID:
+              <input type="text" id="userID">
+            </label>
+          </div>
+          <div class="searchbar">
+            <label>Enter Book ID:
+              <input type="text" id="bookID">
+            </label>
+          </div>
+          <div class="searchbar">
+            <label>Due Date:
+              <input type="date" id="dueDate">
+            </label>
+          </div>
+          <div>
+            <input type="submit" id="loanBook" value="Loan / Renew Book">
+          </div>
+        </div>
+      </div>
+      <div class = books_func>
+        <div>
+          <h2>Books</h2>
+          <table id="books_table">
+            <tr class="firstRow">
+              <td>ID</td>
+              <td>Title</td>
+              <td>ISBN</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h2>Books on loan</h2>
+          <table id="loanedBooks">
+            <tr class="firstRow">
+              <td>Loan ID</td>
+              <td>Book ID</td>
+              <td>User ID</td>
+              <td>Due Date</td>
+            </tr>
+          </table>
+        </div>
+        <div class="searchbar">
+          <h2>Book Returns</h2>
+          <label>Enter loan ID for book:
+            <input type="text" id='loanID'>
+          </label>
+          <input type="submit" id="endLoan" value="End Loan">
+        </div>
+      </div>
+    </div>
+    <script src="loanScript.js">
+
+    </script>
+  </body>
+</html>

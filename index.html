@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PontyBridge Library</title>
+  </head>
+  <body>
+    <header>
+      <div class="dropdown">
+        <button id="menu-button"><img id=menu alt="menu" src="images/menu.png"></button>
+        <div class="dropdown-content">
+          <a href="index.html">Library Home</a>
+          <a href="users.html">Users</a>
+          <a href="books.html">Books</a>
+          <a href="loans.html">Loans</a>
+        </div>
+      </div>
+      <h1>University of PontyBridge</h1>
+      <h1><a href="index.html">Library home</a></h1>
+      <h1><a href="users.html">Users</a></h1>
+      <h1><a href="books.html">Books</a></h1>
+      <h1><a href="loans.html">Loans</a></h1>
+    </header>
+    <h2>Library</h2>
+    <div class="container">
+      <div class = "box1">
+        <a href="users.html"><img src="images/users.jpg" alt=""></a>
+        <!-- image taken from https://en.wikipedia.org/wiki/Public_library
+        Accessed 22-12-19
+        end of reference -->
+      </div>
+      <div class="search_user">
+        <h3><a href="users.html">Search/View Users</a></h3>
+      </div>
+      <div class="add_user">
+        <form>
+          <div>
+            <label> Name:
+              <input type="text" id ="name">
+            </label>
+          </div>
+          <div>
+            <label> Barcode:
+              <input type="text" id ="barcode">
+            </label>
+          </div>
+          <div>
+            <label> Member Type:
+              <input type="text" id="member_type">
+            </label>
+          </div>
+          <input id ="addUser" type="submit" value="Add User">
+        </form>
+      </div>
+      <div class="box2">
+        <a href="books.html"><img src="images/books.jpg" alt=""></a>
+        <!-- image taken from https://www.pexels.com/photo/row-of-books-in-shelf-256541/
+        Accessed 22-12-19
+        end of reference -->
+      </div>
+      <div class="search_book">
+        <h3><a href="books.html">Search/View Books</a></h3>
+      </div>
+      <div class="add_book">
+        <form>
+          <div>
+            <label for="title"> Title:
+              <input type="text" id="title">
+            </label>
+          </div>
+          <div>
+            <label for="isbn"> ISBN:
+              <input type="text" id="isbn">
+            </label>
+          </div>
+          <input id="addBook" type="submit" value="Add Book">
+        </form>
+      </div>
+      <div class="box3">
+        <a href="loans.html"><img src="images/loans.jpg" alt=""></a>
+        <!-- image taken from https://seventhfallangel.wordpress.com/
+        Accessed 22-12-19
+        end of reference -->
+      </div>
+      <div class="viewLoans">
+        <h3><a href="loans.html">View Loaning</a></h3>
+      </div>
+    </div>
+    <script>
+    const base_url = "http://127.0.0.1:3000";
+
+    const processResponse = function(){                                                               // code for process response
+      response = JSON.parse(this.response);
+    };
+
+    const encodeParameters = function(params){                                                       // code fo encode parameters function
+      var strArray = [];
+      Object.keys(params).forEach(function(key){
+        var paramString = encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+        strArray.push(paramString);
+      });
+      return strArray.join("&");
+    };
+
+
+
+    document.getElementById('addUser').addEventListener('click',function(){                         // code to add a user
+
+      var users_url = base_url + "/users" ;
+
+
+      let name = document.getElementById('name').value;
+      let barcode = document.getElementById('barcode').value;
+      let memberType = document.getElementById('member_type').value;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.addEventListener('load', processResponse);
+      xhttp.open('POST', users_url);
+      xhttp.setRequestHeader('Content-Type', 'application/json');
+
+      var params = {
+        name: name,
+        barcode: barcode,
+        memberType: memberType
+      };
+
+
+      xhttp.send(JSON.stringify(params));
+    });
+
+
+    document.getElementById('addBook').addEventListener('click', function(){                      // code to add a book
+
+      var books_url = base_url + "/books?allEntities=true";
+
+      let title = document.getElementById('title').value;
+      let isbn = document.getElementById('isbn').value;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.open('POST', books_url);
+      xhttp.setRequestHeader('Content-Type', 'application/json');
+
+      var params = {
+        title: title,
+        isbn: isbn,
+      };
+
+
+      xhttp.send(JSON.stringify(params));
+
+    });
+
+    </script>
+  </body>
+</html>
